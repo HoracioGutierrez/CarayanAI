@@ -42,8 +42,10 @@ function Chat({ id , initMessages }: Props) {
                     </div>
                 ))}
             </section>
-            <textarea ref={messagesRef} onChange={handleInputChange} value={input} className="resize-none w-full bg-slate-900 text-wite rounded p-2"></textarea>
-            <button onClick={handleClick}>Enviar</button>
+            <label htmlFor="message">
+                <textarea id="message" ref={messagesRef} onChange={handleInputChange} value={input} className="resize-none w-full bg-slate-900 text-wite rounded p-2"></textarea>
+            </label>
+            <button type="button" onClick={handleClick}>Enviar</button>
         </>
     )
 }
