@@ -13,17 +13,15 @@ async function HistoryPage() {
 
     return (
         <>
-            <h2 className="mb-4">History</h2>
+            <h2 className="text-3xl">History</h2>
             <p>Aca podes revisar las conversaciones viejas que tuviste con Pablo. Hacele click a cualquiera : </p>
-            <section>
+            <section className="flex flex-col gap-2">
                 {chats.map((chat: any) => (
-                    <div key={chat.id}>
-                        <article>
-                            <Link href={chat.path}>
-                                {chat.title}
-                            </Link>
-                        </article>
-                    </div>
+                    <article key={chat.id} className="border-2 rounded-md p-2 bg-zinc-800 hover:bg-zinc-900 cursor-pointer">
+                        <Link href={chat.path}>
+                            {chat.title}
+                        </Link>
+                    </article>
                 ))}
             </section>
         </>
