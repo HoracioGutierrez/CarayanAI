@@ -2,7 +2,6 @@ import { getServerSession } from "next-auth"
 import { getChats } from "../lib/actions"
 import LoginButton from "../components/LoginButton"
 import Link from "next/link"
-import { TrashIcon } from "@radix-ui/react-icons"
 import DeleteButton from "../components/DeleteButton"
 
 async function HistoryPage() {
@@ -13,7 +12,6 @@ async function HistoryPage() {
 
     const chats = await getChats(session.user.email)
 
-    //console.log(chats)
     //TODO bhay chat.createdAt (ej 1689003239994) que se puede convertir a fecha
     //TODO hay chat.messages que es un array de mensajes, se podria mostrar la cantidad de mensajes
     //TODO habria que hacer un popup de confirmacion de borrado, asi ya hay de paso un popup global
