@@ -1,9 +1,9 @@
 import { getChats, getUserVerification } from "./lib/actions"
 import { getServerSession } from "next-auth"
 import LoginButton from "./components/LoginButton"
-import ChatPage from "./chat/[id]/page"
 import { nanoid } from "nanoid"
 import PaymentButton from "./components/PaymentButton"
+import Chat from "./components/Chat"
 
 async function Home() {
 
@@ -17,7 +17,7 @@ async function Home() {
 
   return (
     <>
-      {chats.length >= 5 && !verified ? <PaymentButton /> : <ChatPage id={id} />}
+      {chats.length >= 5 && !verified ? <PaymentButton /> : <Chat id={id} initMessages={[]}/>}
     </>
   )
 }

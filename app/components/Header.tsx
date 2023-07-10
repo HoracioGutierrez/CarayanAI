@@ -14,8 +14,8 @@ async function Header() {
                 <h1>CarayanAI</h1>
             </Link>
             <nav className="flex gap-4 items-center">
-                {session ? <LogoutButton/> : <LoginButton/>}
                 {session && <Link href="/history">history</Link>}
+                {session ? <LogoutButton/> : <LoginButton/>}
                 {(session && session.user && session.user.image) && <Image src={session.user.image} alt="user image" width={35} height={35} className="rounded-full"/>}
             </nav>
         </header>

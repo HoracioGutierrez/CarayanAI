@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth"
 import { getChats } from "../lib/actions"
 import LoginButton from "../components/LoginButton"
+import Link from "next/link"
 
 async function HistoryPage() {
 
@@ -12,13 +13,16 @@ async function HistoryPage() {
 
     return (
         <>
-            <h2>History</h2>
+            <h2 className="mb-4">History</h2>
+            <p>Aca podes revisar las conversaciones viejas que tuviste con Pablo. Hacele click a cualquiera : </p>
             <section>
                 {chats.map((chat: any) => (
                     <div key={chat.id}>
-                        <div >
-                            {chat.title}
-                        </div>
+                        <article>
+                            <Link href={chat.path}>
+                                {chat.title}
+                            </Link>
+                        </article>
                     </div>
                 ))}
             </section>

@@ -30,3 +30,10 @@ export function getUserVerification(userEmail?: string | null) {
 
     return kv.get(`user:verification:${userEmail}`)
 }
+
+export function getChatMessages(chatId?: string | null) {
+    if (!chatId) {
+        return { messages : [] }
+    }
+    return kv.hgetall(`chat:${chatId}`)
+}
