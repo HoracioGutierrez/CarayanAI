@@ -28,6 +28,10 @@ function Chat({ id , initMessages }: Props) {
         }
     }
 
+    //TODO agregar la imagen de pablo/usuario dependiendo del rol del mensaje (message.role)
+    //TODO hay una imagen en assets carayania-avatar.png
+    //TODO agregar condicionalmente que el boton cancele el stream
+
     return (
         <>
             <h2>Playground</h2>
