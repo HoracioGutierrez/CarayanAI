@@ -34,15 +34,9 @@ export async function POST(req: NextRequest) {
             }
         ],
         back_urls: {
-            success: process.env.NODE_ENV === "production" || process.env.NEXT_PUBLIC_VERCEL_ENV === "production" 
-            ? "https://carayanai-manual.vercel.app/success" 
-            : "http://localhost:3000/success",
-            failure: process.env.NODE_ENV === "production" || process.env.NEXT_PUBLIC_VERCEL_ENV === "production" 
-            ? "https://carayanai-manual.vercel.app/failure" 
-            : "http://localhost:3000/failure",
-            pending: process.env.NODE_ENV === "production" || process.env.NEXT_PUBLIC_VERCEL_ENV === "production" 
-            ? "https://carayanai-manual.vercel.app/pending" 
-            : "http://localhost:3000/pending"
+            success: process.env.BASE_URL + "/success",
+            failure: process.env.BASE_URL + "/failure",
+            pending: process.env.BASE_URL + "/pending"
         },
         auto_return: "approved" as const,
     }
