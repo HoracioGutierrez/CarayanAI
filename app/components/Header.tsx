@@ -9,7 +9,7 @@ async function Header() {
   const session = await getServerSession()
 
     return (
-        <header className="flex justify-between p-4">
+        <header className="flex justify-between p-4 gap-4">
             <Link href={"/"}>
                 <h1>CarayanAI</h1>
             </Link>

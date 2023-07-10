@@ -12,11 +12,11 @@ async function HistoryPage() {
 
     return (
         <>
-            <h2>History</h2>
-            <section>
+            <h2 className="text-3xl">History</h2>
+            <section className="flex flex-col gap-2">
                 {chats.map((chat: any) => (
                     <div key={chat.id}>
-                        <div >
+                        <div className="border-2 rounded-md p-2 bg-zinc-800 hover:bg-zinc-900 cursor-pointer">
                             {chat.title}
                         </div>
                     </div>

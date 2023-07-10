@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className='bg-neutral-900 h-full'>
+      <body className={`${inter.className} bg-gradient-to-b from-black to-neutral-950 to-80% h-full`}>
         <Header />
-        <main className='p-4'>
+        <main className='p-4 flex flex-col gap-4'>
           {children}
         </main>
       </body>
