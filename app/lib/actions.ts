@@ -1,5 +1,4 @@
 import { kv } from '@vercel/kv'
-import { revalidatePath } from 'next/cache'
 
 export async function getChats(userEmail?: string | null) {
     if (!userEmail) {
@@ -13,12 +12,14 @@ export async function getChats(userEmail?: string | null) {
         })
 
         for (const chat of chats) {
-            pipeline.hgetall(chat).exists()
+            pipeline.hgetall(chat)
         }
 
         const results = await pipeline.exec()
 
-        return results
+        const filteredResults = results.filter(result => result !== null)
+
+        return filteredResults
     } catch (error) {
         return []
     }
