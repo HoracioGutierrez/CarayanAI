@@ -9,16 +9,16 @@ type Props = {
     initMessages: any
 }
 
-function Chat({ id , initMessages }: Props) {
+function Chat({ id, initMessages }: Props) {
 
     const messagesRef = useRef<HTMLTextAreaElement | null>(null)
-    const { append, messages, handleInputChange, input , setMessages } = useCarayanAI()
+    const { append, messages, handleInputChange, input, setMessages } = useCarayanAI()
 
-    useEffect(()=>{
-        if (initMessages && initMessages.length > 0){
+    useEffect(() => {
+        if (initMessages && initMessages.length > 0) {
             setMessages(initMessages)
         }
-    },[])
+    }, [])
 
     const handleClick = async () => {
         const messages = messagesRef.current?.value || ""
@@ -34,16 +34,23 @@ function Chat({ id , initMessages }: Props) {
 
     return (
         <>
-            <h2>Playground</h2>
-            <section>
-                {messages.map((message,i) => (
-                    <div key={i}>
-                        {message.content}
-                    </div>
-                ))}
-            </section>
-            <textarea ref={messagesRef} onChange={handleInputChange} value={input} className="resize-none w-full bg-slate-900 text-wite rounded p-2"></textarea>
-            <button onClick={handleClick}>Enviar</button>
+            <h2 className="text-2xl py-4 px-2">Playground</h2>
+            <div className="flex flex-col grow border-slate-600 border-2">
+                <div className=" bg-slate-900 h-5/6">
+                    <section className="p-6">
+                        {messages.map((message, i) => (
+                            <div className="p-2" key={i}>
+                                {message.content}
+                            </div>
+                        ))}
+                    </section>
+                </div>
+                <div className="flex h-1/6 bottom-24 w-full border-slate-600 hover:border-slate-300 border-2 rounded-md">
+                    <textarea ref={messagesRef} onChange={handleInputChange} value={input} className="resize-none bg-slate-900 text-wite rounded-l-md w-5/6"></textarea>
+                    <button className="bg-slate-900 rounded-r-md w-1/6" onClick={handleClick}>Enviar</button>
+                </div>
+            </div>
+
         </>
     )
 }
