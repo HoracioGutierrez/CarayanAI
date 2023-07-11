@@ -59,8 +59,6 @@ function Chat({ id, initMessages }: Props) {
 
     //TODO agregar la imagen de pablo/usuario dependiendo del rol del mensaje (message.role)
     //TODO hay una imagen en assets carayania-avatar.png
-    //TODO agregar condicionalmente que el boton cancele el stream
-    //TODO agregar condicionalmente un componente que muestre un mensaje inicial de bienvenida con 3 opciones de mensajes y que se pueda elegir uno, el mensaje debe no mostrarse en el chat si hay mensajes para mostrar
 
     return (
         <>
