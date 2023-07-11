@@ -15,6 +15,9 @@ async function Home() {
   const chats = await getChats(session.user.email)
   const id = nanoid()
 
+  console.log(chats.length)
+  console.log(verified)
+
   return (
     <>
       {chats.length >= 5 && !verified ? <PaymentButton /> : <Chat id={id} initMessages={[]}/>}

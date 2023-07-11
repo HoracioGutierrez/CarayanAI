@@ -21,22 +21,32 @@ export async function getChats(userEmail?: string | null) {
 
         return filteredResults
     } catch (error) {
-        return []
+        return [{},{},{},{},{},{}]
     }
 }
 
-export function getUserVerification(userEmail?: string | null) {
+export async function getUserVerification(userEmail?: string | null) {
     if (!userEmail) {
         return null
     }
 
-    return kv.get(`user:verification:${userEmail}`)
+    try {
+        return await kv.get(`user:verification:${userEmail}`)
+    } catch (error) {
+        return false
+    }
 }
 
-export function getChatMessages(chatId?: string | null) {
+export async function getChatMessages(chatId?: string | null) {
     if (!chatId) {
         return { messages: [] }
     }
-    return kv.hgetall(`chat:${chatId}`)
+
+    try {
+        return await kv.hgetall(`chat:${chatId}`)
+    } catch (error) {
+        return { messages: [] }
+    }
+    
 }
 

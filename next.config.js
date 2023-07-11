@@ -1,14 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental : {
-        serverActions : true
+    experimental: {
+        serverActions: true
     },
-    images : {
-        remotePatterns : [
+    images: {
+        remotePatterns: [
             {
                 hostname: "lh3.googleusercontent.com"
             }
         ]
+    },
+    env: {
+        MERCADOPAGO_CLIENT_ID: process.env.MERCADOPAGO_CLIENT_ID,
     }
 }
 

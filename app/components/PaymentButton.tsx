@@ -6,7 +6,6 @@ import { initMercadoPago, Wallet } from "@mercadopago/sdk-react"
 function PaymentButton() {
 
     const [preferenceId, setPreferenceId] = useState("")
-
     initMercadoPago(process.env.MERCADOPAGO_CLIENT_ID || "")
 
     useEffect(()=>{
