@@ -15,7 +15,6 @@ async function HistoryPage() {
 
     //TODO bhay chat.createdAt (ej 1689003239994) que se puede convertir a fecha
     //TODO hay chat.messages que es un array de mensajes, se podria mostrar la cantidad de mensajes
-    //TODO habria que hacer un popup de confirmacion de borrado, asi ya hay de paso un popup global
 
     return (
         <>

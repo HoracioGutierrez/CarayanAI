@@ -18,7 +18,6 @@ function DeleteButton({ id }: Props) {
     }
 
     const handleDelete = async () => {
-        //TODO borrar el chat
         const result = await deleteChat(id)
         if(result){
             setOpen(false)
