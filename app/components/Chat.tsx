@@ -13,7 +13,7 @@ type Props = {
 function Chat({ id, initMessages }: Props) {
 
     const messagesRef = useRef<HTMLTextAreaElement | null>(null)
-    const { append, messages, handleInputChange, input, setMessages , stop , isLoading , setInput } = useCarayanAI()
+    const { append, messages, handleInputChange, input, setMessages , stop , isLoading , setInput , reload } = useCarayanAI()
     const [showRegenerate, setShowRegenerate] = useState(false)
 
     useEffect(() => {
@@ -37,12 +37,15 @@ function Chat({ id, initMessages }: Props) {
         stop()
     }
 
+    const handleReload = () => {
+        reload()
+        setShowRegenerate(false)
+    }
+
     //TODO agregar la imagen de pablo/usuario dependiendo del rol del mensaje (message.role)
     //TODO hay una imagen en assets carayania-avatar.png
     //TODO agregar condicionalmente que el boton cancele el stream
     //TODO agregar condicionalmente un componente que muestre un mensaje inicial de bienvenida con 3 opciones de mensajes y que se pueda elegir uno, el mensaje debe no mostrarse en el chat si hay mensajes para mostrar
-
-    console.log(showRegenerate)
 
     return (
         <>
@@ -58,7 +61,7 @@ function Chat({ id, initMessages }: Props) {
                         {showRegenerate && (
                             <div className="absolute bottom-2 self-center">
                                 <p>Regenerar respuesta</p>
-                                <ReloadIcon/>
+                                <ReloadIcon onClick={handleReload}/>
                             </div>
                         )}
                     </section>
