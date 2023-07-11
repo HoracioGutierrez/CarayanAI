@@ -18,9 +18,10 @@ async function HistoryPage() {
 
     return (
         <>
-            <h2 className="text-3xl">History</h2>
+            <h2 className="text-2xl">History</h2>
             <p>Aca podes revisar las conversaciones viejas que tuviste con Pablo. Hacele click a cualquiera : </p>
-            <section className="flex flex-col gap-2">
+            
+            <section className="flex flex-col gap-2S">
                 {chats.map((chat: any) => (
                     <article key={chat.id} className="border-2 rounded-md p-2 bg-zinc-800 hover:bg-zinc-900 cursor-pointer justify-between flex">
                         <Link href={chat.path}>
