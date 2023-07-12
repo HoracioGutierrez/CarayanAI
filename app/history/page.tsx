@@ -15,7 +15,8 @@ async function HistoryPage() {
 
     //TODO bhay chat.createdAt (ej 1689003239994) que se puede convertir a fecha
     //TODO hay chat.messages que es un array de mensajes, se podria mostrar la cantidad de mensajes
-
+    //TODO hacer un share de un chat, que se pueda compartir el link de un chat y que se pueda ver sin loguearse
+    
     return (
         <>
             <h2 className="text-2xl">History</h2>
