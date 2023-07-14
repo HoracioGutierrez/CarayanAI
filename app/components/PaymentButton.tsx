@@ -39,9 +39,9 @@ function PaymentButton() {
     }
 
     return (
-        <>
-            {preferenceId && <Wallet initialization={{ preferenceId: preferenceId }} />}
-        </>
+        <div className="max-w-md mx-auto">
+            {preferenceId && <Wallet customization={{texts : {valueProp : "practicality" , action : "pay"}}} initialization={{ preferenceId: preferenceId }} />}
+        </div>
     )
 }
 

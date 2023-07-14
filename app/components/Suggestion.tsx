@@ -1,6 +1,5 @@
 'use client'
 import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { useState } from "react"
 
 const contentSuggestions = [
     {
@@ -18,25 +17,18 @@ const contentSuggestions = [
 ]
 
 function CreateSuggestion({ set }: any) {
-    const [suggestion, setSuggestion] = useState(false)
 
-    const handleMoreDetail = (e: any) => {
-        setSuggestion(!suggestion)
-        e.target.id
-        contentSuggestions.find((item, i) => {
-            if (e.target.id == i) {
-                set(item.content)
-            }
-        }
-        )
+    const handleMoreDetail = (item:any) => {
+        set(item.content)
     }
+
     return (
         <div className="mx-auto max-w-md">
             <h3 className="text-center text-4xl font-bold mb-4">Bienvenido!</h3>
             <p className="my-10 text-justify text-[rgba(255,255,255,0.7)]">Soy CarayanIA, un homenaje en forma de bot que imita como habla Pablo Carayani Camara. Podes preguntarme lo que sea y si no te imaginas que decirme, aca te dejo algunas opciones muy chick para una persona aventurera como vos : </p>
             <nav className="flex flex-col">
                 {contentSuggestions.map((item, i) => (
-                    <button key={i} id={`${i}`} className={`${i == 0 && "animate-pulse"} px-2 py-1 hover:text-yellow-200 hover:animate-pulse hover:bg-slate-800 text-left flex items-center gap-4 group rounded`} onClick={handleMoreDetail}>
+                    <button key={i} id={`${i}`} className={`${i == 0 && "animate-pulse"} px-2 py-1 hover:text-yellow-200 hover:animate-pulse hover:bg-slate-800 text-left flex items-center gap-4 group rounded`} onClick={()=>handleMoreDetail(item)}>
                         <ArrowRightIcon className="group-hover:rotate-90 transition duration-300" />
                         <span>
                             {item.heading}

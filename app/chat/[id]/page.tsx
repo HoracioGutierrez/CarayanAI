@@ -21,7 +21,7 @@ async function ChatPage({ params: { id } }: Props) {
     }
 
     return (
-        <Chat initMessages={chat && chat.messages ? chat.messages : []} id={id} />
+        <Chat initMessages={chat && chat.messages ? chat.messages : []} id={id} session={session} />
     )
 }
 

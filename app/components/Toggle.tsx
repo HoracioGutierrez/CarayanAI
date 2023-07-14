@@ -18,11 +18,17 @@ function ToggleMenu({ src, userName }: AvatarProps) {
         setToggle(!toggle)
     }
 
+    const handleBlur = (e: any) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+            console.log("test")
+        }
+    }
+
     return (
 
-        <div className="flex flex-col relative">
+        <div className="flex flex-col relative" onBlur={handleBlur}>
             <button onClick={handleClick}>
-                <Image src={src} alt="user image" width={65} height={65} className="rounded-full" />
+                <Image src={src} alt="user image" width={50} height={50} className="rounded-full" />
             </button>
             {toggle && (
                 <div className="flex flex-col w-max text-left absolute bg-slate-900 divide-y-2 divide-slate-400/25 border-2 border-slate-700 top-[68px] right-0 rounded-md z-20">

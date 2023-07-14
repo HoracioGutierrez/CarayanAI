@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className='bg-neutral-900 h-full'>
-      <body className={`${inter.className} relative bg-gradient-to-b from-black to-neutral-950 to-80% flex flex-col h-full`}>
+      <body className={`${inter.className} relative bg-gradient-to-b from-black to-neutral-950 to-80% flex flex-col min-h-full`}>
         <Header />
-        <main className='p-4 h-full relative flex flex-col'>
+        <main className='p-4 h-full flex flex-col'>
           {children}
         </main>
       </body>

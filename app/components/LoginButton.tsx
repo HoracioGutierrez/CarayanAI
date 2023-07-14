@@ -6,7 +6,7 @@ type LoginButtonProps = {
     text ?: string
 }
 
-function LoginButton({ className , text = "Login" }: LoginButtonProps) {
+function LoginButton({ className , text = "login" }: LoginButtonProps) {
     return (
         <button onClick={() => signIn("google")} className={`${className}`}>{text}</button>
     )

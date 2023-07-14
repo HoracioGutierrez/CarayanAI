@@ -5,21 +5,23 @@ import useCarayanAI from "@/app/hooks/useCarayanAI"
 import { PaperPlaneIcon, ReloadIcon, StopIcon } from "@radix-ui/react-icons"
 import { useEffect, useRef, useState } from "react"
 import CreateSuggestion from "./Suggestion"
+import Image from "next/image"
+import avatar from "../assets/carayania-avatar.png"
 
 type Props = {
     id: string,
-    initMessages: any
+    initMessages: any,
+    session: any
 }
 
 
 
-function Chat({ id, initMessages }: Props) {
+function Chat({ id, initMessages, session }: Props) {
 
     const messagesRef = useRef<HTMLTextAreaElement | null>(null)
     const { append, messages, handleInputChange, input, setMessages, stop, isLoading, setInput, reload } = useCarayanAI()
     const [showRegenerate, setShowRegenerate] = useState(false)
     const [content, setContent] = useState("")
-
 
     useEffect(() => {
         if (initMessages && initMessages.length > 0) {
@@ -28,6 +30,7 @@ function Chat({ id, initMessages }: Props) {
     }, [])
 
     useEffect(() => {
+        console.log(content)
         if (content) {
             setInput(content)
         }
@@ -70,12 +73,37 @@ function Chat({ id, initMessages }: Props) {
                             <CreateSuggestion set={setContent} />
                         </div>
                     )}
-                    <section className="p-6 flex flex-col">
-                        {messages.map((message, i) => (
-                            <div className="p-2" key={i}>
-                                {message.content}
-                            </div>
-                        ))}
+                    <section className="flex flex-col">
+                        {messages.map((message, i) => {
+                            return (
+                                <div className={`flex gap-4 p-4 ${message.role == "user" ? "justify-end bg-[rgba(255,255,255,0.2)]" : "justify-start"}`} key={i}>
+                                    {message.role == "user" && (
+                                        <>
+                                            <p>{message.content}</p>
+                                            <Image
+                                                src={session.user.image}
+                                                alt={"user avatar"}
+                                                width={40}
+                                                height={40}
+                                                className="w-[40px] h-[40px]"
+                                            />
+                                        </>
+                                    )}
+                                    {message.role == "assistant" && (
+                                        <>
+                                            <Image
+                                                src={avatar}
+                                                alt={"bot avatar"}
+                                                width={40}
+                                                height={40}
+                                                className="w-[40px] h-[40px]"
+                                            />
+                                            <p>{message.content}</p>
+                                        </>
+                                    )}
+                                </div>
+                            )
+                        })}
                         {showRegenerate && (
                             <div className="absolute bottom-2 self-center">
                                 <p>Regenerar respuesta</p>
