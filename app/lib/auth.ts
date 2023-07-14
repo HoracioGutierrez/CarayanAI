@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
                     response_type: "code",
                     redirect_uri: "https://carayanai-manual.vercel.app/api/auth/callback/google"
                 },
-                url: "https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code&redirect_uri=http%3A%2F%2Fcarayanai-manual.vercel.app%3A3000%2Fapi%2Fauth%2Fcallback%2Fgoogle"
+                url: "https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code&redirect_uri=https%3A%2F%2Fcarayanai-manual.vercel.app%2Fapi%2Fauth%2Fcallback%2Fgoogle"
             }
         }),        
     ],
