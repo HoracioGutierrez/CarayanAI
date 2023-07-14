@@ -8,7 +8,7 @@ type LoginButtonProps = {
 
 function LoginButton({ className , text = "login" }: LoginButtonProps) {
     return (
-        <button onClick={() => signIn("google", { callbackUrl: "https://carayanai-manual.vercel.app/api/auth/callback/google"})} className={`${className}`}>{text}</button>
+        <button onClick={() => signIn()} className={`${className}`}>{text}</button>
     )
 }
 export default LoginButton
