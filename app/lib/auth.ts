@@ -8,4 +8,9 @@ export const authOptions: NextAuthOptions = {
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
         }),        
     ],
+    callbacks : {
+        async redirect({ url, baseUrl }){
+            return "https://carayanai-manual.vercel.app"
+        }
+    }
 };
