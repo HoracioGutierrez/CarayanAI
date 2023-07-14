@@ -60,9 +60,6 @@ function Chat({ id, initMessages, session }: Props) {
         handleInputChange(e)
     }
 
-    //TODO agregar la imagen de pablo/usuario dependiendo del rol del mensaje (message.role)
-    //TODO hay una imagen en assets carayania-avatar.png
-
     return (
         <>
             <h2 className="text-2xl py-4 px-2">Playground</h2>

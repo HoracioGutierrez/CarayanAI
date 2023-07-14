@@ -6,5 +6,6 @@ export const config = {
         '/api/mercadopago',
         "/chat",
         "/mercadopago",
+        "/history"
     ],
 }

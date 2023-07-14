@@ -21,7 +21,7 @@ export async function getChats(userEmail?: string | null) {
 
         return filteredResults
     } catch (error) {
-        return [{},{},{},{},{},{}]
+        return [{}, {}, {}, {}, {}, {}]
     }
 }
 
@@ -39,14 +39,14 @@ export async function getUserVerification(userEmail?: string | null) {
 
 export async function getChatMessages(chatId?: string | null) {
     if (!chatId) {
-        return { messages: [] }
+        return { messages: [], id: "", createdAt: 0, path: "", title: "", userId: "" }
     }
 
     try {
-        return await kv.hgetall(`chat:${chatId}`)
+        return await kv.hgetall(`chat:${chatId}`) as { messages: { role: string, content: string }[], id: string, createdAt: number, path: string, title: string, userId: string }
     } catch (error) {
-        return { messages: [] }
+        return { messages: [], id: "", createdAt: 0, path: "", title: "", userId: "" }
     }
-    
+
 }
 
