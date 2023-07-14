@@ -4,7 +4,7 @@ export const config = {
     matcher: [
         '/api/chat',
         '/api/mercadopago',
-        "/chat",
+        "/chat/:path*",
         "/mercadopago",
         "/history"
     ],
