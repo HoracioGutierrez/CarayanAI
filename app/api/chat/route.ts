@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from 'openai-edge'
 import { getServerSession } from 'next-auth'
 import { nanoid } from "nanoid"
 
-//export const runtime = 'edge'
+export const runtime = 'edge'
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY
@@ -35,6 +35,7 @@ export async function POST(req: Request) {
         ],
         temperature: 1,
         stream: true,
+        max_tokens : 500
     })
 
     const stream = OpenAIStream(res, {
