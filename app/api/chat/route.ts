@@ -1,10 +1,11 @@
 import { kv } from '@vercel/kv'
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { Configuration, OpenAIApi } from 'openai-edge'
-import { getServerSession } from 'next-auth'
 import { nanoid } from "nanoid"
+//import { auth } from '@/auth'
+import { getServerSession } from 'next-auth'
 
-export const runtime = 'edge'
+//export const runtime = 'edge'
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY
@@ -16,13 +17,12 @@ export async function POST(req: Request) {
     const json = await req.json()
     const { messages } = json
     const session = await getServerSession()
+    //const session = await auth()?.user
     if (!session) {
         return new Response('Unauthorized', {
             status: 401
         })
     }
-
-    console.log(json)
 
     const res = await openai.createChatCompletion({
         model: 'gpt-4',
