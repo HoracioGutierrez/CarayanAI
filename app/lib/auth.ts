@@ -7,13 +7,20 @@ export const authOptions: NextAuthOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID || "",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-            authorization : {
+            /* authorization: {
+                params: {
+                    prompt: "consent",
+                    access_type: "offline",
+                    response_type: "code"
+                }
+            } */
+            /* authorization : {
                 params : {
                     redirect_uri : process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "development" 
                     ? "http://localhost:3000/api/auth/callback/google" 
                     : "https://carayanai-manual.vercel.app/api/auth/callback/google"
                 }
-            }
+            } */
             /* authorization: {
                 params: {
                     redirect_uri: "https://carayanai-manual.vercel.app/api/auth/callback/google",
@@ -27,7 +34,7 @@ export const authOptions: NextAuthOptions = {
             return "https://carayanai-manual.vercel.app"
         }
     } */
-    cookies : {
+    /* cookies : {
         csrfToken : {
             name : "csrfToken",
             options : {
@@ -46,5 +53,5 @@ export const authOptions: NextAuthOptions = {
                 secure: true
             }
         } 
-    }
+    } */
 };
