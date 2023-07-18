@@ -1,13 +1,14 @@
-import { getServerSession } from "next-auth"
+//import { getServerSession } from "next-auth"
 import LoginButton from "./LoginButton"
 import Link from "next/link"
 import ToggleMenu from "./Toggle"
 import Image from "next/image"
 import carayaniAvatar from "../assets/carayania-avatar.png"
+import { auth } from "@/auth"
 
 async function Header() {
 
-    const session = await getServerSession()
+    const session = await auth()
 
     return (
         <header className="flex justify-between p-4 gap-4">

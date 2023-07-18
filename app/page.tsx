@@ -1,13 +1,14 @@
 import { getChats, getUserVerification } from "./lib/actions"
-import { getServerSession } from "next-auth"
+//import { getServerSession } from "next-auth"
 import { nanoid } from "nanoid"
 import Chat from "./components/Chat"
 import WelcomeNoLogged from "./components/WelcomeNoLogged"
 import PaymentRequestPage from "./components/PaymentRequestPage"
+import { auth } from "@/auth"
 
 async function Home() {
 
-  const session = await getServerSession()
+  const session = await auth()
   
   if (!session || !session.user) return <WelcomeNoLogged/>
   

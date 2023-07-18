@@ -1,13 +1,14 @@
-import { getServerSession } from "next-auth"
+//import { getServerSession } from "next-auth"
 import { getChats } from "../lib/actions"
 import LoginButton from "../components/LoginButton"
 import Link from "next/link"
 import DeleteButton from "../components/DeleteButton"
 import ShareButton from "../components/ShareButton"
+import { auth } from "@/auth"
 
 async function HistoryPage() {
 
-    const session = await getServerSession()
+    const session = await auth()
 
     if (!session || !session.user) return <LoginButton />
 
