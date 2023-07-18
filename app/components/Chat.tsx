@@ -77,7 +77,7 @@ function Chat({ id, initMessages, session }: Props) {
                                         <>
                                             <p>{message.content}</p>
                                             <Image
-                                                src={session.user.image}
+                                                src={session.user.picture}
                                                 alt={"user avatar"}
                                                 width={40}
                                                 height={40}

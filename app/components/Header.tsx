@@ -16,7 +16,7 @@ async function Header() {
                 <Image src={carayaniAvatar} width={50} height={50} alt="logo" className="rounded-full" />
             </Link>
             <nav className="flex gap-4 items-center">
-                {session ? (session && session.user && session.user.image) && <ToggleMenu src={session.user.image} userName={session.user.name}/> : <LoginButton />}
+                {session ? (session && session.user && session.user.picture) && <ToggleMenu src={session.user.picture} userName={session.user.name}/> : <LoginButton />}
             </nav>
         </header>
 
