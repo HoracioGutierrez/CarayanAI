@@ -30,7 +30,6 @@ function Chat({ id, initMessages, session }: Props) {
     }, [])
 
     useEffect(() => {
-        console.log(content)
         if (content) {
             setInput(content)
         }
