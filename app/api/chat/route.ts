@@ -18,11 +18,11 @@ export async function POST(req: Request) {
     const { messages } = json
     //const session = await getServerSession()
     const session = await auth()
-    /* if (!session) {
+    if (!session) {
         return new Response('Unauthorized', {
             status: 401
         })
-    } */
+    }
 
     const res = await openai.createChatCompletion({
         model: 'gpt-4',
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
             const payload = {
                 id,
                 title,
-                //userId: session.user?.email,
+                userId: session.user?.email,
                 createdAt,
                 path,
                 messages: [
@@ -59,10 +59,10 @@ export async function POST(req: Request) {
                 ]
             }
             await kv.hmset(`chat:${id}`, payload)
-            /* await kv.zadd(`user:chat:${session.user?.email}`, {
+            await kv.zadd(`user:chat:${session.user?.email}`, {
                 score: createdAt,
                 member: `chat:${id}`
-            }) */
+            })
         },
         async onToken(token) {
             console.log(token)
