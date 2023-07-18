@@ -8,11 +8,11 @@ function PaymentButton() {
     const [preferenceId, setPreferenceId] = useState("")
     initMercadoPago(process.env.MERCADOPAGO_CLIENT_ID || "")
 
-    useEffect(()=>{
-        if(!preferenceId){
+    useEffect(() => {
+        if (!preferenceId) {
             handleClick()
         }
-    },[])
+    }, [preferenceId])
 
     const createPreference = async () => {
         const response = await fetch("/api/mercadopago", {
@@ -40,7 +40,7 @@ function PaymentButton() {
 
     return (
         <div className="max-w-md mx-auto">
-            {preferenceId && <Wallet customization={{texts : {valueProp : "practicality" , action : "pay"}}} initialization={{ preferenceId: preferenceId }} />}
+            {preferenceId && <Wallet customization={{ texts: { valueProp: "practicality", action: "pay" } }} initialization={{ preferenceId: preferenceId }} />}
         </div>
     )
 }

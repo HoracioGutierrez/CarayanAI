@@ -26,7 +26,7 @@ function SuccessRedirect({ email }: Props) {
                     })
             }
         }
-    }, [])
+    }, [email])
 
     if (verified){
         redirect("/")

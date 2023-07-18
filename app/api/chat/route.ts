@@ -63,6 +63,9 @@ export async function POST(req: Request) {
                 score: createdAt,
                 member: `chat:${id}`
             })
+        },
+        async onToken(token) {
+            console.log(token)
         }
     })
 

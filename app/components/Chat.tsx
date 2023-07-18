@@ -27,13 +27,13 @@ function Chat({ id, initMessages, session }: Props) {
         if (initMessages && initMessages.length > 0) {
             setMessages(initMessages)
         }
-    }, [])
+    }, [initMessages, setMessages])
 
     useEffect(() => {
         if (content) {
             setInput(content)
         }
-    }, [content])
+    }, [content, setInput])
 
     const handleSend = async () => {
         const messages = messagesRef.current?.value || ""
