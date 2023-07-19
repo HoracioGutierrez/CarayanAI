@@ -9,7 +9,7 @@ type LogoutButtonProps = {
 
 function LogoutButton({ className, text = "Logout", closeMenu }: LogoutButtonProps) {
     return (
-        <button onClick={() => { closeMenu(); signOut() }} className={`${className} text-left`}>{text}</button>
+        <button onClick={(e) => { closeMenu(e); signOut() }} className={`${className} text-left`}>{text}</button>
     )
 }
 export default LogoutButton
