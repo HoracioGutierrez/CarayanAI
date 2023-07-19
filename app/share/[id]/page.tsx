@@ -28,8 +28,8 @@ async function ShareChatPage({ params: { id } }: Props) {
 
     return (
         <>
-            <h2 className="text-2xl">CarayanIA Chat</h2>
-            <p className="font-thin font-xs mt-4">Este es el chat que tuviste con CarayanIA el {formatDate(result?.createdAt as number)}</p>
+            <h2 className="text-2xl">CarayanAI Chat</h2>
+            <p className="font-thin font-xs mt-4">Este es el chat que tuviste con CarayanAI el {formatDate(result?.createdAt as number)}</p>
             <p>Podes compartir la URL de esta pagina que no se necesita estar logueado para verla!</p>
             <section className="mt-8">
                 {result?.messages.map((message: any) => {
