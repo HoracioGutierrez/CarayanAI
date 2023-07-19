@@ -34,9 +34,9 @@ export async function POST(req: NextRequest) {
             }
         ],
         back_urls: {
-            success: "https://carayanai-manual.vercel.app" + "/success",
-            failure: "https://carayanai-manual.vercel.app" + "/failure",
-            pending: "https://carayanai-manual.vercel.app" + "/pending"
+            success: "https://carayanai.vercel.app" + "/success",
+            failure: "https://carayanai.vercel.app" + "/failure",
+            pending: "https://carayanai.vercel.app" + "/pending"
         },
         auto_return: "approved" as const,
     }

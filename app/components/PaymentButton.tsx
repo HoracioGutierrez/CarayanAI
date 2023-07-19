@@ -22,7 +22,7 @@ function PaymentButton() {
             },
             body: JSON.stringify({
                 title: "CarayanAI",
-                unit_price: 100,
+                unit_price: 1000,
                 quantity: 1,
                 currency_id: "ARS"
             })
