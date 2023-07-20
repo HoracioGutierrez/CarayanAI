@@ -8,8 +8,13 @@ import Footer from './components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'CarayanAI Chatbot',
+  title: {
+    template: 'CarayanAI - %s',
+    default : 'CarayanAI ChatBot'
+  },
   description: 'A chatbot that helps you with your outfit and talks like Pablo Carayáni Camara',
+  keywords : ["Pablo","Carayani","Next.js","AI","Chatbot","vercel"],
+  authors : [{name : "Horacio Gutierrez" , url : "https://instagram.com/horagutierrez"}]
 }
 
 export default function RootLayout({
@@ -30,7 +35,7 @@ export default function RootLayout({
         <main className='p-4 h-full flex flex-col grow'>
           {children}
         </main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   )

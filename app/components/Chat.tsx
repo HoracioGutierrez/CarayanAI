@@ -15,7 +15,6 @@ type Props = {
 }
 
 
-
 function Chat({ id, initMessages, session }: Props) {
 
     const messagesRef = useRef<HTMLTextAreaElement | null>(null)

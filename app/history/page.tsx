@@ -5,6 +5,12 @@ import Link from "next/link"
 import DeleteButton from "../components/DeleteButton"
 import ShareButton from "../components/ShareButton"
 import { auth } from "@/auth"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "History",
+    description: "Aca podes revisar las conversaciones viejas que tuviste con CarayanAI",
+}
 
 async function HistoryPage() {
 

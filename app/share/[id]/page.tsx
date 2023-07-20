@@ -1,12 +1,18 @@
 import { getChatMessages } from "@/app/lib/actions"
 import Image from "next/image"
 import avatar from "../../assets/carayania-avatar.png"
+import { Metadata } from "next"
 
 type Props = {
     params: {
         id: string
     }
 }
+
+export const metadata: Metadata = {
+    title: "Share Chat"
+}
+
 
 async function ShareChatPage({ params: { id } }: Props) {
 
