@@ -15,13 +15,17 @@ export async function getChats(userEmail?: string | null) {
             pipeline.hgetall(chat)
         }
 
-        const results = await pipeline.exec()
+        if (chats.length > 0) {
+            const results = await pipeline.exec()
 
-        const filteredResults = results.filter(result => result !== null)
+            const filteredResults = results.filter(result => result !== null)
 
-        return filteredResults
+            return filteredResults
+        } else {
+            return []
+        }
     } catch (error) {
-        return [{}, {}, {}, {}, {}, {}]
+        return []
     }
 }
 
