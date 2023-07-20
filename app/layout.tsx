@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from './components/Header'
 import Script from 'next/script'
-import Head from 'next/head'
+import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,9 +27,10 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
         <Header />
-        <main className='p-4 h-full flex flex-col'>
+        <main className='p-4 h-full flex flex-col grow'>
           {children}
         </main>
+        <Footer/>
       </body>
     </html>
   )
