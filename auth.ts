@@ -1,5 +1,4 @@
 import NextAuth, { DefaultSession } from "next-auth";
-//import { authOptions } from "./app/lib/auth";
 import GoogleProvider from "next-auth/providers/google";
 
 declare module 'next-auth' {

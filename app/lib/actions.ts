@@ -31,11 +31,16 @@ export async function getChats(userEmail?: string | null) {
 
 export async function getUserVerification(userEmail?: string | null) {
     if (!userEmail) {
-        return null
+        return false
     }
 
     try {
-        return await kv.get(`user:verification:${userEmail}`)
+        const result = await kv.get(`user:verification:${userEmail}`)
+        if (result === "true") {
+            return true
+        } else {
+            return false
+        }
     } catch (error) {
         return false
     }

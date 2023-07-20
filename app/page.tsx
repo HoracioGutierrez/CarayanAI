@@ -14,7 +14,6 @@ async function Home() {
   
   const verified = await getUserVerification(session.user.email)
   const chats = await getChats(session.user.email)  
-  console.log(chats)
   const id = nanoid()
 
   return (
