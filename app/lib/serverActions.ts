@@ -65,7 +65,6 @@ export async function getMessagesCount(email: string) {
             return 0
         }
     } catch (error) {
-        console.log(error)
         return 0
     }
 
