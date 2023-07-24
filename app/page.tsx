@@ -1,10 +1,10 @@
 import { getChats, getUserVerification } from "./lib/actions"
-//import { getServerSession } from "next-auth"
 import { nanoid } from "nanoid"
 import Chat from "./components/Chat"
 import WelcomeNoLogged from "./components/WelcomeNoLogged"
 import PaymentRequestPage from "./components/PaymentRequestPage"
 import { auth } from "@/auth"
+import { getMessagesCount, unverifyUser, verifyUser } from "./lib/serverActions"
 
 async function Home() {
 
@@ -13,12 +13,16 @@ async function Home() {
   if (!session || !session.user) return <WelcomeNoLogged/>
   
   const verified = await getUserVerification(session.user.email)
-  const chats = await getChats(session.user.email)  
+  const count = await getMessagesCount(session.user.email as string)
   const id = nanoid()
+  let verifiedUser = true
+  if (count >= 5 && !verified) {
+    verifiedUser = false
+  }
 
   return (
     <>
-      {chats.length >= 5 && !verified ? <PaymentRequestPage /> : <Chat id={id} initMessages={[]} session={session}/>}
+      {!verifiedUser ? <PaymentRequestPage /> : <Chat verifiedUser={verifiedUser} id={id} initMessages={[]} session={session}/>}
     </>
   )
 }

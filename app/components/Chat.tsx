@@ -7,15 +7,17 @@ import { useEffect, useRef, useState } from "react"
 import CreateSuggestion from "./Suggestion"
 import Image from "next/image"
 import avatar from "../assets/carayania-avatar.png"
+import PaymentButton from "./PaymentButton"
 
 type Props = {
     id: string,
     initMessages: any,
-    session: any
+    session: any,
+    verifiedUser: boolean
 }
 
 
-function Chat({ id, initMessages, session }: Props) {
+function Chat({ id, initMessages, session, verifiedUser }: Props) {
 
     const messagesRef = useRef<HTMLTextAreaElement | null>(null)
     const { append, messages, handleInputChange, input, setMessages, stop, isLoading, setInput, reload } = useCarayanAI()
@@ -108,10 +110,17 @@ function Chat({ id, initMessages, session }: Props) {
                     </section>
                 </div>
                 <div className="flex w-full border-slate-600 hover:border-slate-300 border-2 rounded-md relative items-center">
-                    <textarea ref={messagesRef} onChange={handleTextAreaChange} value={input} className="resize-none h-fit overflow-hidden bg-slate-900 text-wite rounded-l-md w-full p-4 pr-8" />
-                    <button className="bg-slate-900 rounded-r-md absolute right-2 z-10" onClick={isLoading ? handleStop : handleSend}>
-                        {isLoading ? <StopIcon /> : <PaperPlaneIcon />}
-                    </button>
+                    {verifiedUser && (
+                        <>
+                            <textarea ref={messagesRef} onChange={handleTextAreaChange} value={input} className="resize-none h-fit overflow-hidden bg-slate-900 text-wite rounded-l-md w-full p-4 pr-8" />
+                            <button className="bg-slate-900 rounded-r-md absolute right-2 z-10" onClick={isLoading ? handleStop : handleSend}>
+                                {isLoading ? <StopIcon /> : <PaperPlaneIcon />}
+                            </button>
+                        </>
+                    )}
+                    {!verifiedUser && (
+                        <PaymentButton/>
+                    )}
                 </div>
             </div>
         </>

@@ -1,4 +1,7 @@
-function Footer() {
+import { verifyUser } from "../lib/serverActions"
+
+async function Footer() {
+
     return (
         <footer className='flex flex-col items-center justify-center text-center text-neutral-300 text-xs py-2'>
             <p>CarayanAI es un proyecto de <a href="https://instagram.com/horagutierrez">Horacio Gutierrez</a> </p>

@@ -36,7 +36,7 @@ export async function getUserVerification(userEmail?: string | null) {
 
     try {
         const result = await kv.get(`user:verification:${userEmail}`)
-        if (result === "true") {
+        if (result) {
             return true
         } else {
             return false

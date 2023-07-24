@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Header from './components/Header'
 import Script from 'next/script'
 import Footer from './components/Footer'
+import { verifyUser } from './lib/serverActions'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="es" className='bg-neutral-900 h-full'>
       <body className={`${inter.className} relative bg-gradient-to-b from-black to-neutral-950 to-80% flex flex-col min-h-full`}>
