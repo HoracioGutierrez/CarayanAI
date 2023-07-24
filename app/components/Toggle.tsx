@@ -33,8 +33,10 @@ function ToggleMenu({ src, userName }: AvatarProps) {
             {toggle && (
                 <div className="flex flex-col w-max text-left absolute bg-slate-900 divide-y-2 divide-slate-400/25 border-2 border-slate-700 top-[68px] right-0 rounded-md z-20">
                     <h3 className="py-2 px-1">{userName}</h3>
-                    <Link className="px-2 py-1 hover:bg-slate-800" href="/" onClick={handleBlur} prefetch={false}>New Chat</Link>
+                    <Link className="px-2 py-1 hover:bg-slate-800" href="/" onClick={handleBlur} prefetch={false}>Nuevo Chat</Link>
                     <Link className="px-2 py-1 hover:bg-slate-800" href="/history" onClick={handleBlur} prefetch={false}>History</Link>
+                    <Link className="px-2 py-1 hover:bg-slate-800" href="/about" onClick={handleBlur} prefetch={false}>Nosotros</Link>
+                    <Link className="px-2 py-1 hover:bg-slate-800" href="/showcase" onClick={handleBlur} prefetch={false}>Ejemplos</Link>
                     <LogoutButton className="px-2 py-1 hover:bg-slate-800" closeMenu={handleBlur} />
                 </div>
             )}
