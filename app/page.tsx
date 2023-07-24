@@ -1,28 +1,31 @@
-import { getChats, getUserVerification } from "./lib/actions"
+import { getUserVerification } from "./lib/actions"
 import { nanoid } from "nanoid"
 import Chat from "./components/Chat"
 import WelcomeNoLogged from "./components/WelcomeNoLogged"
 import PaymentRequestPage from "./components/PaymentRequestPage"
 import { auth } from "@/auth"
-import { getMessagesCount, unverifyUser, verifyUser } from "./lib/serverActions"
+import { getMessagesCount, verifyUser } from "./lib/serverActions"
 
 async function Home() {
 
   const session = await auth()
-  
-  if (!session || !session.user) return <WelcomeNoLogged/>
-  
+
+  if (!session || !session.user) return <WelcomeNoLogged />
+
   const verified = await getUserVerification(session.user.email)
   const count = await getMessagesCount(session.user.email as string)
   const id = nanoid()
+
   let verifiedUser = true
+
+  
   if (count >= 5 && !verified) {
     verifiedUser = false
   }
 
   return (
     <>
-      {!verifiedUser ? <PaymentRequestPage /> : <Chat verifiedUser={verifiedUser} id={id} initMessages={[]} session={session}/>}
+      {!verifiedUser ? <PaymentRequestPage /> : <Chat verifiedUser={verifiedUser} id={id} initMessages={[]} session={session} />}
     </>
   )
 }
