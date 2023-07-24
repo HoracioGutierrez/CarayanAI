@@ -8,7 +8,7 @@ import Image from "next/image"
 
 type Props = {}
 
-function page({ }: Props) {
+function Page({ }: Props) {
 
   const [show, setShow] = useState(false)
   const [image, setImage] = useState("")
@@ -53,4 +53,4 @@ function page({ }: Props) {
   )
 }
 
-export default page
+export default Page
