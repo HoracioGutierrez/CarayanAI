@@ -62,7 +62,6 @@ function Chat({ id, initMessages, session, verifiedUser }: Props) {
 
     return (
         <>
-            <h2 className="text-2xl py-4 px-2">Playground</h2>
             <div className="flex flex-col grow gap-4">
                 <div className=" bg-slate-900 grow border-slate-600 border-2 rounded relative flex flex-col">
                     {!messages.length && (

@@ -24,7 +24,7 @@ function CreateSuggestion({ set }: any) {
 
     return (
         <div className="mx-auto max-w-md">
-            <h3 className="text-center text-4xl font-bold mb-4">Bienvenido!</h3>
+            <h2 className="text-center text-4xl font-bold mb-4">Bienvenido!</h2>
             <p className="my-10 text-justify font-thin  text-lg  text-white">Soy CarayanAI, un homenaje en forma de bot que imita como habla Pablo Carayani Camara. Podes preguntarme lo que sea y si no te imaginas que decirme, aca te dejo algunas opciones muy chick para una persona aventurera como vos : </p>
             <nav className="flex flex-col">
                 {contentSuggestions.map((item, i) => (

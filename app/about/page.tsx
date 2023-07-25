@@ -1,7 +1,7 @@
 async function AboutUsPage() {
     return (
-        <section className="gap-2 border-2 bg-slate-900 border-slate-600 rounded p-4 flex flex-col gap-8">
-            <h2 className="text-4xl text-white mb-8">Sobre Nosotros</h2>
+        <section className="border-2 bg-slate-900 border-slate-600 rounded p-4 flex flex-col gap-8 ">
+            <h2 className="text-4xl text-white mb-8 font-bold">Sobre Nosotros</h2>
             <p className=" font-thin  text-lg text-justify  text-white mb-8">¡Hola farafans! como estaaan? Somos nosotras, sus faraAmigas... ¡ChatGPT By:Nereas! 🌈🌈🌈</p>
             <div className="flex flex-col lg:flex-row items-start gap-8">
                 <div className="flex flex-col gap-8 w-full">
