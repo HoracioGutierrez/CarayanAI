@@ -36,8 +36,8 @@ function page() {
 
       <div>
         <h3 className="text-2xl mb-1 text-white">Cookies y balizas web</h3>
-        <p className="font-thin text-base text-white font-sans text-white/60">Al igual que cualquier otro sitio web, CarayanAI utiliza 'cookies'. Estas cookies se utilizan para almacenar información, incluidas las preferencias de los visitantes y las páginas del sitio web que el visitante accedió o visitó. La información se utiliza para optimizar la experiencia de los usuarios personalizando el contenido de nuestra página web en función del tipo de navegador de los visitantes y / u otra información.</p>
-        <p className="font-thin text-base text-white font-sans text-white/60">Para obtener información más general sobre las cookies, lea <a href="https://www.cookieconsent.com/what-are-cookies/" target="_blank">"What Are Cookies" de Cookie Consent</a>.</p>
+        <p className="font-thin text-base text-white font-sans text-white/60">Al igual que cualquier otro sitio web, CarayanAI utiliza &apos;cookies&apos;. Estas cookies se utilizan para almacenar información, incluidas las preferencias de los visitantes y las páginas del sitio web que el visitante accedió o visitó. La información se utiliza para optimizar la experiencia de los usuarios personalizando el contenido de nuestra página web en función del tipo de navegador de los visitantes y / u otra información.</p>
+        <p className="font-thin text-base text-white font-sans text-white/60">Para obtener información más general sobre las cookies, lea <a href="https://www.cookieconsent.com/what-are-cookies/" target="_blank">&quot;What Are Cookies&quot; de Cookie Consent</a>.</p>
       </div>
 
 
@@ -85,7 +85,7 @@ function page() {
 
       <div>
         <h3 className="text-2xl mb-1 text-white">Usos y Limites</h3>
-        <p className="font-thin text-base text-white font-sans text-white/60">El límite de preguntas se refiere a la cantidad de consultas únicas que se pueden realizar dentro de cada nueva sesión de chat. Los usuarios que alcancen este límite deben abrir una nueva sesión de chat o actualizar a la cuenta premium para seguir realizando preguntas. Un "token" se refiere a una unidad de procesamiento que utiliza la aplicación para procesar la información. La cantidad de tokens utilizada varía en función del tamaño y la complejidad de cada pregunta y respuesta.</p>
+        <p className="font-thin text-base text-white font-sans text-white/60">El límite de preguntas se refiere a la cantidad de consultas únicas que se pueden realizar dentro de cada nueva sesión de chat. Los usuarios que alcancen este límite deben abrir una nueva sesión de chat o actualizar a la cuenta premium para seguir realizando preguntas. Un &quot;token&quot; se refiere a una unidad de procesamiento que utiliza la aplicación para procesar la información. La cantidad de tokens utilizada varía en función del tamaño y la complejidad de cada pregunta y respuesta.</p>
       </div>
 
       <div>
