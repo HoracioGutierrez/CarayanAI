@@ -37,6 +37,7 @@ function ToggleMenu({ src, userName }: AvatarProps) {
                     <Link className="px-2 py-1 hover:bg-slate-800" href="/history" onClick={handleBlur} prefetch={false}>History</Link>
                     <Link className="px-2 py-1 hover:bg-slate-800" href="/about" onClick={handleBlur} prefetch={false}>Nosotros</Link>
                     <Link className="px-2 py-1 hover:bg-slate-800" href="/showcase" onClick={handleBlur} prefetch={false}>Ejemplos</Link>
+                    <Link className="px-2 py-1 hover:bg-slate-800" href="/privacy" onClick={handleBlur} prefetch={false}>F.A.Q.</Link>
                     <LogoutButton className="px-2 py-1 hover:bg-slate-800" closeMenu={handleBlur} />
                 </div>
             )}
