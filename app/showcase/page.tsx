@@ -27,19 +27,19 @@ function Page({ }: Props) {
           <div className="relative grow min-h-[270px]">
             <Image src={Image1} alt="Ejemplo de chat 1" fill onClick={handleClick} />
           </div>
-          <p>Ejemplo 1 : Que opinas de nancy pasos?</p>
+          <p className="text-base text-white font-medium text-center">Ejemplo 1 : Que opinas de nancy pasos?</p>
         </article>
         <article className="p-4 min-h-[300px] w-[180px] relative transition duration-300 rounded-lg hover:scale-125 hover:bg-[rgba(255,255,255,0.3)] flex flex-col z-0 gap-2 hover:z-10">
           <div className="relative grow min-h-[270px]">
             <Image src={Image2} alt="Ejemplo de chat 1" fill onClick={handleClick} />
           </div>
-          <p>Ejemplo 2 : Generacion de outfits cancheros</p>
+          <p className="text-base text-white font-medium text-center">Ejemplo 2 : Generacion de outfits cancheros</p>
         </article>
         <article className="p-4 min-h-[300px] w-[180px] relative transition duration-300 rounded-lg hover:scale-125 hover:bg-[rgba(255,255,255,0.3)] flex flex-col z-0 gap-2 hover:z-10">
           <div className="relative grow min-h-[270px]">
             <Image src={Image3} alt="Ejemplo de chat 1" fill onClick={handleClick} />
           </div>
-          <p>Ejemplo 3:  chat nada que ver</p>
+          <p className="text-base text-white font-medium text-center">Ejemplo 3:  chat nada que ver</p>
         </article>
       </section>
       {show && (

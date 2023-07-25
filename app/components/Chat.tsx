@@ -94,16 +94,16 @@ function Chat({ id, initMessages, session, verifiedUser }: Props) {
                                                 height={40}
                                                 className="w-[40px] h-[40px]"
                                             />
-                                            <p>{message.content}</p>
+                                            <p>{message.content} {isLoading && "..."}</p>
                                         </>
                                     )}
                                 </div>
                             )
-                        })}
+                        })} 
                         {showRegenerate && (
-                            <div className="absolute bottom-2 self-center">
+                            <div className="absolute bottom-2 self-center flex flex-col items-center">
+                                <ReloadIcon onClick={handleReload} className="animate-spin"/>
                                 <p>Regenerar respuesta</p>
-                                <ReloadIcon onClick={handleReload} />
                             </div>
                         )}
                     </section>

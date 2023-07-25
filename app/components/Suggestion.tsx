@@ -28,7 +28,7 @@ function CreateSuggestion({ set }: any) {
             <p className="my-10 text-justify font-thin  text-lg  text-white">Soy CarayanAI, un homenaje en forma de bot que imita como habla Pablo Carayani Camara. Podes preguntarme lo que sea y si no te imaginas que decirme, aca te dejo algunas opciones muy chick para una persona aventurera como vos : </p>
             <nav className="flex flex-col">
                 {contentSuggestions.map((item, i) => (
-                    <button key={i} id={`${i}`} className={`${i == 0 && "animate-pulse"} px-2 py-1 hover:text-yellow-200 hover:animate-pulse hover:bg-slate-800 text-left flex items-center gap-4 group rounded`} onClick={()=>handleMoreDetail(item)}>
+                    <button key={i} id={`${i}`} className={`${i == 0 && "animate-pulse"} px-2 py-1 hover:text-yellow-200 hover:animate-pulse hover:bg-slate-800 text-left flex items-center gap-4 group rounded text-base text-white font-medium`} onClick={()=>handleMoreDetail(item)}>
                         <ArrowRightIcon className="group-hover:rotate-90 transition duration-300" />
                         <span>
                             {item.heading}
