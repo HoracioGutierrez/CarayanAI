@@ -14,11 +14,12 @@ async function Home() {
 
   const verified = await getUserVerification(session.user.email)
   const count = await getMessagesCount(session.user.email as string)
+
   const id = nanoid()
 
   let verifiedUser = true
 
-  
+
   if (count >= 5 && !verified) {
     verifiedUser = false
   }
