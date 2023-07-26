@@ -1,5 +1,4 @@
-User-Agent: *
-Allow: /
-Disallow: /private/
+User-agent: Mediapartners-Google
+Disallow: /
 
 Sitemap: https://carayanai.vercel.app/sitemap.xml
