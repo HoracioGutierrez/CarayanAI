@@ -2,7 +2,9 @@ import { getAllChats, getChatMessages } from "@/app/lib/actions"
 import Image from "next/image"
 import avatar from "../../assets/carayania-avatar.png"
 import { Metadata } from "next"
- 
+
+export const dynamic = 'force-static'
+
 type Props = {
     params: {
         id: string
