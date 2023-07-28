@@ -4,18 +4,6 @@ export async function getAllChats() {
     let allChats = await kv.keys('chat:*')
     allChats = allChats.map(chat => chat.replace('chat:', ''))
 
-    /* const pipeline = kv.pipeline()
-
-    for (const chat of allChats) {
-        pipeline.hgetall(`chat:${chat}`)
-    }
-
-    const results = await pipeline.exec()
-
-    const filteredResults = results.filter(result => result !== null)
-
-    return filteredResults */
-
     return allChats
 }
 
