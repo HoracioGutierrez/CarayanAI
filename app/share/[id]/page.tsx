@@ -1,8 +1,8 @@
-import { getChatMessages } from "@/app/lib/actions"
+import { getAllChats, getChatMessages } from "@/app/lib/actions"
 import Image from "next/image"
 import avatar from "../../assets/carayania-avatar.png"
 import { Metadata } from "next"
-
+ 
 type Props = {
     params: {
         id: string
@@ -11,6 +11,17 @@ type Props = {
 
 export const metadata: Metadata = {
     title: "Share Chat"
+}
+
+export async function generateStaticParams() {
+    const cookieStore = await getAllChats()
+    return cookieStore.map((chat: any) => {
+        return {
+            params: {
+                id: chat.id
+            }
+        }
+    })
 }
 
 

@@ -11,7 +11,8 @@ const nextConfig = {
             {
                 hostname: "api.dicebear.com",
             }
-        ]
+        ],
+        dangerouslyAllowSVG: true,
     },
     env: {
         MERCADOPAGO_CLIENT_ID: process.env.MERCADOPAGO_CLIENT_ID,
