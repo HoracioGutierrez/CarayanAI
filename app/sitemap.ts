@@ -33,12 +33,12 @@ export default async function sitemap() {
   const ids = await getAllChats()
 
   const urls = [
-    "https://carayanai.verce.app",
-    "https://carayanai.verce.app/history",
-    "https://carayanai.verce.app/privacy",
-    "https://carayanai.verce.app/about",
-    "https://carayanai.verce.app/showcase",
-    ...ids.map(id => `https://carayanai.verce.app/share/${id}`)
+    "https://carayanai.vercel.app",
+    "https://carayanai.vercel.app/history",
+    "https://carayanai.vercel.app/privacy",
+    "https://carayanai.vercel.app/about",
+    "https://carayanai.vercel.app/showcase",
+    ...ids.map(id => `https://carayanai.vercel.app/share/${id}`)
   ]
 
   return [
