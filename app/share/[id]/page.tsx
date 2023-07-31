@@ -17,13 +17,14 @@ export const metadata: Metadata = {
 
 export async function generateStaticParams() {
     const cookieStore = await getAllChats()
-    return cookieStore.map((chat: any) => {
+    const paths = cookieStore.map((chat: any) => {
         return {
             params: {
-                id: chat.id
+                id: chat
             }
         }
     })
+    return paths
 }
 
 

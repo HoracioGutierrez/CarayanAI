@@ -5,6 +5,10 @@ import Image from "next/image"
 import carayaniAvatar from "../assets/carayania-avatar.png"
 import { auth } from "@/auth"
 
+export const dynamic = "force-static"
+
+
+
 async function Header() {
 
     const session = await auth()
