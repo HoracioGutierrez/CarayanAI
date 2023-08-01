@@ -3,7 +3,6 @@ import LoginButton from "../components/LoginButton"
 import Link from "next/link"
 import DeleteButton from "../components/DeleteButton"
 import ShareButton from "../components/ShareButton"
-//import { auth } from "@/auth"
 import { Metadata } from "next"
 import { getServerSession } from "next-auth"
 
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 
 async function HistoryPage() {
 
-    // const session = await auth()
     const session = await getServerSession()
 
     if (!session || !session.user) return <LoginButton />

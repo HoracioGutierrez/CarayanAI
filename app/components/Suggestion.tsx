@@ -1,4 +1,5 @@
 'use client'
+
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 
 const contentSuggestions = [
