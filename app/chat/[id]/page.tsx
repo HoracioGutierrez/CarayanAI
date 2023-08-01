@@ -1,8 +1,9 @@
 import Chat from "@/app/components/Chat"
 import { getChatMessages, getUserVerification } from "@/app/lib/actions"
 import { getMessagesCount, unverifyUser, verifyUser } from "@/app/lib/serverActions"
-import { auth } from "@/auth"
+//import { auth } from "@/auth"
 import { Metadata } from "next"
+import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 
 type Props = {
@@ -18,7 +19,13 @@ export const metadata: Metadata = {
 async function ChatPage({ params: { id } }: Props) {
 
     const chat = await getChatMessages(id)
-    const session = await auth()
+    //const session = await auth()
+    const session = await getServerSession()
+    if (!session || !session.user) {
+        redirect("/login")
+        //TODO: redirect to login
+        return null
+    }
     const verified = await getUserVerification(session.user.email)
     const count = await getMessagesCount(session.user.email as string)
 

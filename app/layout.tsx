@@ -5,17 +5,18 @@ import Header from './components/Header'
 import Script from 'next/script'
 import Footer from './components/Footer'
 import { Analytics } from '@vercel/analytics/react';
+import AuthProvider from './components/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
     template: 'CarayanAI - %s',
-    default : 'CarayanAI ChatBot'
+    default: 'CarayanAI ChatBot'
   },
   description: 'A chatbot that helps you with your outfit and talks like Pablo Carayáni Camara',
-  keywords : ["Pablo","Carayani","Next.js","AI","Chatbot","vercel"],
-  authors : [{name : "Horacio Gutierrez" , url : "https://instagram.com/horagutierrez"}]
+  keywords: ["Pablo", "Carayani", "Next.js", "AI", "Chatbot", "vercel"],
+  authors: [{ name: "Horacio Gutierrez", url: "https://instagram.com/horagutierrez" }]
 }
 
 export default function RootLayout({
@@ -33,12 +34,14 @@ export default function RootLayout({
           crossOrigin='anonymous'
           strategy="lazyOnload"
         />
-        <Header />
-        <main className='p-4 h-full flex flex-col grow'>
-          {children}
-        </main>
-        <Footer />
-        <Analytics/>
+        <AuthProvider>
+          <Header />
+          <main className='p-4 h-full flex flex-col grow'>
+            {children}
+          </main>
+          <Footer />
+        </AuthProvider>
+        <Analytics />
       </body>
     </html>
   )

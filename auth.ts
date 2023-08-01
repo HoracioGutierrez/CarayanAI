@@ -1,10 +1,9 @@
-import NextAuth, { DefaultSession } from "next-auth";
+/* import NextAuth, { DefaultSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 declare module 'next-auth' {
     interface Session {
         user: {
-            /** The user's id. */
             id: string,
             picture : string
         } & DefaultSession['user']
@@ -24,4 +23,4 @@ export const {
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
         })
     ]
-});
+}); */

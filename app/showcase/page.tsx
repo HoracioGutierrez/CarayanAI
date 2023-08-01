@@ -45,7 +45,7 @@ function Page({ }: Props) {
       {show && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 flex justify-center items-center" onClick={() => setShow(false)}>
           <div className="relative w-[90%] h-[90%]">
-            <img src={image} alt="Ejemplo de chat 1" className="w-full h-full object-contain" />
+            <Image src={image} alt="Ejemplo de chat 1" fill className="object-contain" />
           </div>
         </div>
       )}

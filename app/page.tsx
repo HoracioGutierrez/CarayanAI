@@ -3,12 +3,16 @@ import { nanoid } from "nanoid"
 import Chat from "./components/Chat"
 import WelcomeNoLogged from "./components/WelcomeNoLogged"
 import PaymentRequestPage from "./components/PaymentRequestPage"
-import { auth } from "@/auth"
+//import { auth } from "@/auth"
 import { getMessagesCount, verifyUser } from "./lib/serverActions"
+import { useSession } from "next-auth/react"
+import { getServerSession } from "next-auth"
 
 async function Home() {
 
-  const session = await auth()
+  //const session = await auth()
+  //const { data: session } = useSession()
+  const session = await getServerSession()
 
   if (!session || !session.user) return <WelcomeNoLogged />
 

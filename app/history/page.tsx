@@ -3,8 +3,9 @@ import LoginButton from "../components/LoginButton"
 import Link from "next/link"
 import DeleteButton from "../components/DeleteButton"
 import ShareButton from "../components/ShareButton"
-import { auth } from "@/auth"
+//import { auth } from "@/auth"
 import { Metadata } from "next"
+import { getServerSession } from "next-auth"
 
 export const metadata: Metadata = {
     title: "History",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 async function HistoryPage() {
 
-    const session = await auth()
+    // const session = await auth()
+    const session = await getServerSession()
 
     if (!session || !session.user) return <LoginButton />
 
@@ -48,7 +50,7 @@ async function HistoryPage() {
                                     <p className="text-xs font-thin">{formatDate(chat.createdAt)}</p>
                                 </div>
                                 <div className="flex items-center">
-                                    <ShareButton id={chat.id}/>
+                                    <ShareButton id={chat.id} />
                                     <DeleteButton id={chat.id} />
                                 </div>
                             </Link>

@@ -2,7 +2,8 @@ import { kv } from '@vercel/kv'
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { Configuration, OpenAIApi } from 'openai-edge'
 import { nanoid } from "nanoid"
-import { auth } from '@/auth'
+//import { auth } from '@/auth'
+import { getServerSession } from 'next-auth'
 
 
 const configuration = new Configuration({
@@ -14,7 +15,10 @@ const openai = new OpenAIApi(configuration)
 export async function POST(req: Request) {
     const json = await req.json()
     const { messages } = json
-    const session = await auth()
+    //const session = await auth()
+    
+    const session = await getServerSession()
+
     if (!session) {
         return new Response('Unauthorized', {
             status: 401

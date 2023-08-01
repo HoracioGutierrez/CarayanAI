@@ -3,7 +3,7 @@ import Image from "next/image"
 import avatar from "../../assets/carayania-avatar.png"
 import { Metadata } from "next"
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 type Props = {
     params: {
@@ -24,6 +24,7 @@ export async function generateStaticParams() {
             }
         }
     })
+    console.log(paths)
     return paths
 }
 
