@@ -1,6 +1,3 @@
-/* export { GET, POST } from '@/auth'
-export const runtime = 'edge' */
-
 import NextAuth from "next-auth/next";
 import { authOptions } from "./options";
 
